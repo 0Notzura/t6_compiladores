@@ -23,4 +23,4 @@ apagarPasta:apaga uma pasta
 
 incluirPasta:muda a segunda pasta para dentro da primeira
 
-Todas tem o formato função(texto,texto)
+Todas as funções tem () e dentro deles são passados os caminhos para o arquivo ou pasta, e o texto 
