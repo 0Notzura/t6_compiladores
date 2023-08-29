@@ -1,7 +1,29 @@
 # t6_compiladores
 Linguagem para organização de arquivos:
 
-os tokens são os nomes das funções:
+os tokens são os nomes das funções e alguns auxiliares:
+
+auxiliares:
+
+COMENTARIO: '{' ~('\n'|'\r'|'{'|'}')* '}' '\n'?'\r'? {skip();}; // Comentário
+
+
+fragment
+ESC_SEQ	:'\\\'';
+
+WS: (' ' | '\n' | '\r' | '\t') {skip();}; // Espaço em branco
+
+VIR:',';
+
+VAR:('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*;
+
+COMENTARIO_NAO_FECHADO: '{' ~('\n'|'\r'|'{'|'}')* '\n'? '\r'?; // Erro de comentário não fechado
+
+CADEIA_LITERAL_NAO_FECHADA: '\'' ( ESC_SEQ | ~('\''|'\\') )* '\n'? '\r'?; // Erro de cadeia de caracteres não fechada
+
+ERRO: ~('a');
+
+funções:
 
 lerEntrada:recebe os dados de entrada do usuario e coloca em uma variavel
 
