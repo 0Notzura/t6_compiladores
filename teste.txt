@@ -1,0 +1,14 @@
+{atribuições de textos à variaveis precisa ser feita usando ATRIBUIR}
+ATRIBUIR caminho = 'caminho_arquivo'
+
+{uma variavel não precisa ser declarada para ser usada no lerArquivo, pois ela só recebe o valor após a leitura do arquivo}
+lerArquivo(caminho,textoArquivo)
+
+{cria um arquivo e declara o nome}
+criarArquivo('caminho_criado','Deus_Ex_Maquina')
+
+{escrevemos no arquivo criado o texto recebido no lerArquivo}
+escreverNoArquivo('caminho_criado/Deus_Ex_Maquina',textoArquivo)
+
+{apagamos o arquivo criado, dando fim a sua existencia efemera }
+apagarArquivo('caminho_criado/Deus_Ex_Maquina')
